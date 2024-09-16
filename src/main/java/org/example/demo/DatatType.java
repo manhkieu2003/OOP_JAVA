@@ -42,7 +42,7 @@ public class DatatType {
         int a1=1/2;
         double a2 = (double)1/2; // kiểu về doube thì mới ra 0.5
         System.out.println(a2);
-        System.out.println("A1="+a1); //0
+        System.out.println("A1="+a1); //00
 
 
 

@@ -1,4 +1,4 @@
-package org.example.DLGT_JAVA;
+package org.example.DLGT_JAVA.Stack;
 
 import java.util.Stack;
 

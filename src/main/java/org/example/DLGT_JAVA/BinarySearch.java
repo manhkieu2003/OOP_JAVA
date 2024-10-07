@@ -13,16 +13,16 @@ public class BinarySearch {
             // Nếu phần tử giữa là phần tử cần tìm
             if (arr[mid] == key) {
                 return mid;
-            }
-
-            // Nếu phần tử cần tìm nhỏ hơn phần tử giữa, tìm ở nửa bên trái
-            if (arr[mid] > key) {
+            } else if (arr[mid] > key) {   // Nếu phần tử cần tìm nhỏ hơn phần tử giữa, tìm ở nửa bên trái
                 right = mid - 1;
-            }
-            // Nếu phần tử cần tìm lớn hơn phần tử giữa, tìm ở nửa bên phải
-            else {
+            }else { // Nếu phần tử cần tìm lớn hơn phần tử giữa, tìm ở nửa bên phải
                 left = mid + 1;
             }
+
+
+
+
+
         }
 
         return -1; // Nếu không tìm thấy phần tử

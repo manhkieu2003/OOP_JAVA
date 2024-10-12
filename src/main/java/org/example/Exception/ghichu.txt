@@ -1,0 +1,6 @@
+Exception : uncheck and checkException
+1 exception co the co nhiều catch
+2 finally đuươợc măc dinh luc nao cung co the chay mac du co try catch
+3 throw day ra tu dong lenh
+4 throws  day ra tu phuong thuc
+5 Exception cung la class nen co the tao ra no ke thua(extends) tu Exception

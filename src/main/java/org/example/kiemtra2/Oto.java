@@ -28,9 +28,8 @@ public class Oto extends PTGT implements  Tinhgia{
     public void setSocho(int socho) {
         this.socho = socho;
     }
-
     @Override
-    public double laygia() {
+    public double getgia() {
         double t = super.getGia();
         if((2024-super.getNam())>=2)
         {
@@ -38,8 +37,13 @@ public class Oto extends PTGT implements  Tinhgia{
         }
         return t;
     }
+
+
 public String toString()
 {
-    return getMa() +"\t"+ getHang() +"\t"+getNam() +"\t"+laygia() +"\t"+ getMau()+"\t"+socho;
+    return getMa() +"\t"+ getHang() +"\t"+getNam() +"\t"+getgia() +"\t"+ getMau()+"\t"+socho;
 }
+
+
+
 }

@@ -5,7 +5,19 @@ import java.util.Iterator;
 public class PTGT implements Comparable<PTGT> {
     @Override
     public int compareTo(PTGT o) {
-      return Double.compare(gia,o.gia);
+     return Double.compare(gia,o.gia);
+      //  return (int) (gia -o.gia);
+       // return this.ma.compareToIgnoreCase(o.ma); // sx theo ma
+//        if(gia>o.gia)
+//        {
+//            return 1;
+//        } else if(gia == o.gia)
+//        {
+//            return 0;
+//        } else{
+//            return -1;
+//        }
+
     }
 
     private String ma,hang;

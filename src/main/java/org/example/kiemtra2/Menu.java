@@ -21,10 +21,13 @@ public class Menu {
             System.out.println("9.Tim kiem gia cao");
 
             System.out.println("10.Sap xep theo ma");
-            System.out.println("11.Sap xep theo hang");
+
+            System.out.println("11.Sap xep theo nam va gia");
             System.out.println("12.Sap xep theo nam");
-            System.out.println("13.Sap xep theo ");
-            System.out.println("14.Thong khe");
+            System.out.println("13.Sap xep tang dan nam");
+            System.out.println("14.Sap xep theo gia ");
+            System.out.println("15.Thong ke");
+            System.out.println("16.Dem theo mau");
             System.out.println("0.Thoat");
 
             System.out.print("Lua chon:");
@@ -66,14 +69,34 @@ public class Menu {
                       q.sxTheoMa();
                     break;
                 case 11:
-
+                   q.sxTheoNamvaGia();
                     break;
                 case 12:
                   q.sxTheoNam();
                     break;
                 case 13:
+                    q.sxTangdanTheoNam();
+                    break;
+                case 14:
                    q.sxTheoGia();
                     break;
+                case 15:
+
+                    break;
+                case 16:
+              q.countByMau();
+                    break;
+                case 17:
+                    q.sumGiaTheoNam();
+                    break;
+                case 18:
+                    q.maxByGia();
+                    break;
+                case 19:
+                   q.minByGia();
+                    break;
+
+
                 default:
                     System.out.println("chi chon tu 0 den 14");
                     break;

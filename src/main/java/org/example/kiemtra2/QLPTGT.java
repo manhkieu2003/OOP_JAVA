@@ -1,7 +1,11 @@
 package org.example.kiemtra2;
 
+import org.example.DLGT_JAVA.BubbleSortName.Person;
+
 import java.sql.SQLOutput;
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class QLPTGT implements Chucnang {
     private List<PTGT> list;
@@ -241,18 +245,53 @@ public class QLPTGT implements Chucnang {
     }
 
     @Override
-    public void sxTheoMa() {
+    public void sxTheoMa( ) {
      list.sort(new Comparator<PTGT>() {
          @Override
          public int compare(PTGT o1, PTGT o2) {
              return o1.getMa().compareToIgnoreCase(o2.getMa());
          }
      });
-    }
-    @Override
-    public void sxTheoHang()
-    {
 
+//       int n = list.size();
+//        boolean swapped = false;
+//        for(int i = 0; i < n-1; i++)
+//        {
+//            boolean flag = true;
+//            for (int j=0;j<n-1-i;j++)
+//            {
+//                // So sánh tên của hai Person liền kề (so sánh chuỗi)
+//                if (list.get(j).getMa().compareToIgnoreCase(list.get(j+1).getMa()) > 0) {
+//                    PTGT temp = list.get(j);
+//                    list.set(j, list.get(j + 1));
+//                    list.set(j + 1, temp);
+//
+//                    swapped = true;
+//                }
+//            }
+//            if(!swapped)
+//            {
+//                break;
+//            }
+//        }
+    }
+    // sap xep theo 2 thuoc tinh
+    @Override
+    public void sxTheoNamvaGia()
+    {
+       list.sort(new Comparator<PTGT>() {
+
+           @Override
+           public int compare(PTGT o1, PTGT o2) {
+              // neeus nam giong nhau thi sap xep theo gia
+               if(o1.getNam()==o2.getNam())
+               {
+                   return Double.compare(o1.getGia(), o2.getGia());
+               }else{
+                  return o1.getNam() - o2.getNam();
+               }
+           }
+       });
     }
 
     @Override
@@ -262,10 +301,41 @@ public class QLPTGT implements Chucnang {
 
         @Override
         public int compare(PTGT o1, PTGT o2) {
-            return o1.getNam()-o2.getNam(); // tang dan
-            //giam dan o2.getNam() - o1.getNam()
+//            return o1.getNam()-o2.getNam(); // tang dan
+           return    o2.getNam() - o1.getNam() ; // giam dan
         }
     });
+        // sap xep theo buble sort ma k dung iterator
+//        System.out.println("=================");
+//        int n = list.size();
+//        boolean swapped = false;
+//        for(int i = 0; i < n-1; i++)
+//        {
+//            boolean flag = true;
+//            for (int j=0;j<n-1-i;j++)
+//            {
+//                // So sánh tên của hai Person liền kề (so sánh chuỗi)
+//                if (list.get(j).getGia()>(list.get(j+1).getGia())) {
+//                    PTGT temp = list.get(j);
+//                    list.set(j, list.get(j + 1));
+//                    list.set(j + 1, temp);
+//
+//                    swapped = true;
+//                }
+//            }
+//            if(!swapped)
+//            {
+//                break;
+//            }
+//        }
+    }
+    @Override
+    public void sxTangdanTheoNam()
+    {
+sxTheoNam(); // giam dan
+        // reverse thanh tang dan
+        Collections.reverse(list);
+       // Collections.shuffle(list); // sx ngau nhien nhu random
     }
 
     @Override
@@ -277,4 +347,26 @@ public class QLPTGT implements Chucnang {
     public void thongke() {
 
     }
+    public void countByMau()
+    {
+        Map<String,Long> count = list.stream().collect(Collectors.groupingBy(PTGT::getMau, Collectors.counting()));
+        System.out.println(count);
+    }
+    public void sumGiaTheoNam()
+    {
+         Map<Integer,Double> sum = list.stream().collect(Collectors.groupingBy(PTGT::getNam, Collectors.summingDouble(PTGT::getGia)));
+        System.out.println(sum);
+    }
+    public void maxByGia()
+    {
+        Optional<PTGT> max = list.stream().collect(Collectors.maxBy(Comparator.comparing(PTGT::getGia)));
+        System.out.println("Ptgt co gia max:"+(max.isPresent()? max.get():"Khong co"));
+
+    }
+    public void minByGia()
+    {
+        Optional<PTGT> min= list.stream().collect(Collectors.minBy(Comparator.comparing(PTGT::getGia)));
+        System.out.println("Ptgt co gia min:"+(min.isPresent()? min.get():"Khong co"));
+    }
+
 }

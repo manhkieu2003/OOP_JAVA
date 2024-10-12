@@ -19,7 +19,7 @@ public class Xemay extends PTGT implements Tinhgia{
     }
 
     @Override
-    public double laygia() {
+    public double getgia() {
         double t = super.getGia();
         if((2024-super.getNam()>=2))
         {
@@ -29,7 +29,7 @@ public class Xemay extends PTGT implements Tinhgia{
     }
     public String toString()
     {
-        return getMa() +"\t"+ getHang() +"\t"+getNam() +"\t"+laygia() +"\t"+ getMau()+"\t"+congsuat;
+        return getMa() +"\t"+ getHang() +"\t"+getNam() +"\t"+getgia() +"\t"+ getMau()+"\t"+congsuat;
     }
 
 }

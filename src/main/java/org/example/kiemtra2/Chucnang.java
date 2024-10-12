@@ -11,8 +11,13 @@ public interface Chucnang {
     public void tkTheoNam();
     public void tkGiaCao(); // lon hon gi day
     public void sxTheoMa();
-    public void sxTheoHang();
+    public void sxTheoNamvaGia();
     public void sxTheoNam();
+    public void sxTangdanTheoNam();
     public void sxTheoGia();
     public void thongke();
+    public void countByMau();
+    public void  sumGiaTheoNam();
+    public void maxByGia();
+    public void minByGia();
 }
